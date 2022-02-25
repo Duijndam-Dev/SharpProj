@@ -209,6 +209,30 @@
     <OutDir>bin\$(Platform)_$(Configuration)\</OutDir>
     <IntDir>obj\$(Platform)_$(Configuration)\</IntDir>
   </PropertyGroup>
+  <PropertyGroup Label="Vcpkg" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <VcpkgInstalledDir>..\..\..\vcpkg</VcpkgInstalledDir>
+  </PropertyGroup>
+  <PropertyGroup Label="Vcpkg" Condition="'$(Configuration)|$(Platform)'=='DebugCore|Win32'">
+    <VcpkgInstalledDir>..\..\..\vcpkg</VcpkgInstalledDir>
+  </PropertyGroup>
+  <PropertyGroup Label="Vcpkg" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <VcpkgInstalledDir>..\..\..\vcpkg</VcpkgInstalledDir>
+  </PropertyGroup>
+  <PropertyGroup Label="Vcpkg" Condition="'$(Configuration)|$(Platform)'=='ReleaseCore|Win32'">
+    <VcpkgInstalledDir>..\..\..\vcpkg</VcpkgInstalledDir>
+  </PropertyGroup>
+  <PropertyGroup Label="Vcpkg" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <VcpkgInstalledDir>..\..\..\vcpkg</VcpkgInstalledDir>
+  </PropertyGroup>
+  <PropertyGroup Label="Vcpkg" Condition="'$(Configuration)|$(Platform)'=='DebugCore|x64'">
+    <VcpkgInstalledDir>..\..\..\vcpkg</VcpkgInstalledDir>
+  </PropertyGroup>
+  <PropertyGroup Label="Vcpkg" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <VcpkgInstalledDir>..\..\..\vcpkg</VcpkgInstalledDir>
+  </PropertyGroup>
+  <PropertyGroup Label="Vcpkg" Condition="'$(Configuration)|$(Platform)'=='ReleaseCore|x64'">
+    <VcpkgInstalledDir>..\..\..\vcpkg</VcpkgInstalledDir>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <PrecompiledHeader>Use</PrecompiledHeader>

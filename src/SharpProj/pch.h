@@ -15,11 +15,13 @@
 #pragma comment(lib, "proj.lib")
 #pragma comment(lib, "lzma.lib")
 #pragma comment(lib, "tiff.lib")
+#pragma comment(lib, "jpeg.lib")
 #pragma comment(lib, "zlib.lib")
 #else
 #pragma comment(lib, "proj_d.lib")
 #pragma comment(lib, "lzmad.lib")
 #pragma comment(lib, "tiffd.lib")
+#pragma comment(lib, "jpeg.lib")
 #pragma comment(lib, "zlibd.lib")
 #endif
 #pragma comment(lib, "sqlite3.lib")
