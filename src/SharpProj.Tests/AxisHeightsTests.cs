@@ -83,6 +83,7 @@ namespace SharpProj.Tests
                         Assert.AreEqual(143562.0, Math.Round(beOstend.DistanceTransform.GeoDistance(domBE, servaasBE), 1));
                     }
 
+                    string t_as_string = "";
 
                     using (var t = CoordinateTransform.Create(nlNAP, wgs84D3))
                     {
@@ -94,6 +95,30 @@ namespace SharpProj.Tests
 
                         servaasNL.Z = 15;
                         servaasGPS = t.Apply(servaasNL);
+
+                        Assert.AreEqual(new PPoint(50.84938, 5.68771, 60.73539), servaasGPS.ToXYZ(5));
+
+                        ChooseCoordinateTransform transforms = t as ChooseCoordinateTransform;
+                        if (transforms is null)
+                        {
+			                t_as_string = t.AsWellKnownText();
+                        }
+                        else
+                        {
+			                t_as_string = transforms[0].AsWellKnownText();
+                        }
+                    }
+
+                    using (var t2 = CoordinateTransform.Create(t_as_string))
+                    {
+                        var domGPS = t2.Apply(domNL);
+                        Assert.AreEqual(new PPoint(52.09063, 5.123078, 0), domGPS.ToXYZ(7));
+
+                        var servaasGPS = t2.Apply(servaasNL);
+                        Assert.AreEqual(new PPoint(50.84938, 5.687712, 45.7353891), servaasGPS.ToXYZ(7));
+
+                        servaasNL.Z = 15;
+                        servaasGPS = t2.Apply(servaasNL);
 
                         Assert.AreEqual(new PPoint(50.84938, 5.68771, 60.73539), servaasGPS.ToXYZ(5));
                     }
